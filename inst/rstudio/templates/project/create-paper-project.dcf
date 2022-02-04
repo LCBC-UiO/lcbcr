@@ -1,0 +1,10 @@
+Binding: new_project_create_paper_project
+Title: Create LCBC paper project
+Icon: lcbc_logo.png
+OpenFiles:  DESCRIPTION, README.Rmd, docs/example_presentation/Untitled.Rmd, R/example_func.R
+
+Parameter: title
+Default: Untitled
+Widget: TextInput
+Label: Title
+Position: left

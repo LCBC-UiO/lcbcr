@@ -1,0 +1,33 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "docs/figures/README-",
+  out.width = "100%",
+  fig.width = 10, 
+  fig.retina = 3
+)
+```
+
+# {TITLE}
+## {REPO} 
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Write a nice description of your project here.
+Imagine someone is looking at the project trying to figure out what its about, 
+and what files to look for what.
+
+Content:
+- `data`: necessary data for the project. Do not write to it, only read from it. Don't commit to git history.  
+- `R`: contains R custom functions you make and maybe use several places.  
+- `docs`: documents, like Rmarkdown.  
+- `scripts`: analysis scripts and pipelines. Reads from data, sources R and runs analyses. Writes outputs to `results` or `figures`.  
+- `results`: code output and results.  

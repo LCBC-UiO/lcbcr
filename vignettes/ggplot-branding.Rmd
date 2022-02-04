@@ -9,11 +9,11 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-collapse = TRUE,
-comment = "#>",
-out.width = "100%", 
-fig.width = 10, 
-fig.retina = TRUE
+  collapse = TRUE,
+  comment = "#>",
+  out.width = "100%", 
+  fig.width = 7, 
+  fig.retina = 3
 )
 ```
 
@@ -133,7 +133,7 @@ p +
 Adding the LCBC logo to plots is a great way to brand images further, though should be used carefully, so it's not too garish.
 
 ```{r}
- mtcars %>% 
+mtcars %>% 
   ggplot(aes(x = wt, y = disp, colour = cyl))+
   geom_point() +
   labs(title = "LCBC themes", 
