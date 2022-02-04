@@ -4,7 +4,7 @@
 \alias{theme_lcbc}
 \title{ggplot minimal theme for lcbc}
 \usage{
-theme_lcbc(base_size = base_size_text)
+theme_lcbc(base_size = NULL)
 }
 \arguments{
 \item{base_size}{text size}

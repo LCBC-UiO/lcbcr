@@ -1,68 +1,41 @@
-#' MOAS base columns
+#' Projects at LCBC
 #'
-#' a string vector with the most basic columns in the MOAS,
-#' that are usually required for MOAS-functions to work.
-#'
-#' @docType data
-#' @name baseCols
-#' @usage data(baseCols)
-#' @keywords datasets
+#' @return data frame with information on LCBC projects
+#' @export
 #'
 #' @examples
-#' data(baseCols)
-"baseCols"
+#' lcbc_projects()
+#' @importFrom dplyr tribble
+lcbc_projects <- function(){
+  tribble(
+    ~project_id, ~project_name, ~project_experimental,
+    10,          "NDev",        NA,
+    11,          "MemP",        NA,
+    12,          "NCP",         "Memory training",
+    13,          "MoBa",        NA,
+    14,          "Loci",        "Memory training",
+    15,          "MemC",        NA,
+    16,          "ACon",        "Sleep study",
+    17,          "S2C",         "Memory training (VR)",
+    90,          "NBM",         NA
+  )
+}
 
-#' MOAS Projects
+#' LCBC MRI sites
 #'
-#' data frame of LCBC projects in the MOAS
-#'
-#' @docType data
-#' @name Projects
-#' @usage data(Projects)
-#' @keywords datasets
+#' @return data frame with information on LCBC MRI data sites
+#' @export
 #'
 #' @examples
-#' data(Projects)
-"Projects"
-
-#' MOAS sites
-#'
-#' a data frame with information on LCBC sites
-#'
-#' @docType data
-#' @name Sites
-#' @usage data(Sites)
-#' @keywords datasets
-#'
-#' @examples
-#' data(Sites)
-"Sites"
-
-#' MOAS variables
-#'
-#' a data frame with information on the different MOAS variables and
-#' their content and types
-#'
-#' @docType data
-#' @name variables
-#' @usage data(variables)
-#' @keywords datasets
-#'
-#' @examples
-#' data(variables)
-"variables"
-
-
-#' MOAS mock example data
-#'
-#' A mock example of the LCBC data
-#'
-#' @docType data
-#' @name data
-#' @usage data(data)
-#' @keywords datasets
-#'
-#' @examples
-#' data(data)
-"data"
-
+#' lcbc_sites()
+#' @importFrom dplyr tribble
+lcbc_sites = function(){
+  tribble(
+    ~site_number, ~site_name,    ~site_tesla,
+    11,           "ousAvanto",   1.5,
+    12,           "ousSkyra",    3,
+    13,           "ousPrisma",   3,
+    20,           "ntnuAvanto",  1.5,
+    21,           "curatoAvanto", 1.5
+  )
+}

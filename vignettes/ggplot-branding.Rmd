@@ -15,18 +15,17 @@ out.width = "100%",
 fig.width = 10, 
 fig.retina = TRUE
 )
-devtools::load_all(".")
 ```
 
-```{r setup, include=FALSE}
-library(MOAS)
+```{r setup}
+library(lcbcr)
 ```
 
 In the event of needing plots that have LCBC branding for presentations, reports etc. we have custom ggplot2 themes and colour scales to ensure that we have consistent branding. These are particularly suitable when using the rmarkdown-templates that also accompany this package.
 
 ## Applying the LCBC themes to ggplot
 
-The themes are quite minimal, applying mostly just the corrent font and colours to match out branding.
+The themes are quite minimal, applying mostly just the current font and colours to match out branding.
 
 ```{r warning=FALSE, message = FALSE}
 library(ggplot2)
@@ -34,30 +33,43 @@ library(dplyr)
 
 p <- mtcars %>% 
   ggplot(aes(x = wt, y = disp, colour = cyl)) +
-  geom_point() +
-  labs(title = "LCBC themes", 
-       subtitle = "of various kinds")
-
-p +
-  theme_lcbc()
+  geom_point()
+p
 ```
 
-There are variations around the main theme, to adapt to various possible scenarios and tastes, while maintaing a certain aesthetic
+```{r}
+p + 
+  theme_lcbc() +
+  labs(title = "LCBC themes", 
+       subtitle = "default")
+```
+
+There are variations around the main theme, to adapt to various possible scenarios and tastes, while maintaining a certain aesthetic
 
 ```{r}
-p + theme_lcbc_grid()
+p + theme_lcbc_grid() +
+  labs(title = "LCBC themes", 
+       subtitle = "grid")
 
-p + theme_lcbc_dark()
+p + theme_lcbc_dark() +
+  labs(title = "LCBC themes", 
+       subtitle = "dark")
 
-p + theme_lcbc_void()
+p + theme_lcbc_void() +
+  labs(title = "LCBC themes", 
+       subtitle = "void")
 ```
 
 and there are also some pre-defined combinations of the above also.
 
 ```{r}
-p + theme_lcbc_dark_grid()
+p + theme_lcbc_dark_grid() +
+  labs(title = "LCBC themes", 
+       subtitle = "dark grid")
 
-p + theme_lcbc_dark_void()
+p + theme_lcbc_dark_void() +
+  labs(title = "LCBC themes", 
+       subtitle = "dark void")
 ```
 
 ## Colour scales
@@ -85,11 +97,11 @@ By default, the scales grab the "main" palette, which consists of the blue and g
 There are also other variations
 
 ```{r echo = FALSE}
-MOAS:::lcbc_palettes %>% 
+lcbcr:::lcbc_palettes %>% 
   lapply(function(x) tibble(colour = x, r = 1:length(x))) %>% 
   bind_rows(.id="palette") %>% 
   mutate(palette = factor(palette, 
-                          levels = names(MOAS:::lcbc_palettes))
+                          levels = names(lcbcr:::lcbc_palettes))
   ) %>% 
   ggplot(aes(x = r, y=palette, fill = I(colour))) +
   geom_tile() +

@@ -4,10 +4,17 @@
 \alias{scale_color_proj}
 \title{Color scale constructor for proj colors}
 \usage{
-scale_color_proj(...)
+scale_color_proj(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
-\item{...}{arguments to \code{\link{scale_colour_proj}}}
+\item{palette}{Character name of palette in project_palettes}
+
+\item{discrete}{Boolean indicating whether color aesthetic is discrete or not}
+
+\item{reverse}{Boolean indicating whether the palette should be reversed}
+
+\item{...}{Additional arguments passed to discrete_scale() or
+scale_color_gradientn(), used respectively when discrete is TRUE or FALSE}
 }
 \description{
 Color scale constructor for proj colors

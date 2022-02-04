@@ -4,10 +4,17 @@
 \alias{scale_color_lcbc}
 \title{Color scale constructor for lcbc colors}
 \usage{
-scale_color_lcbc(...)
+scale_color_lcbc(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
-\item{...}{arguments to \code{\link{scale_colour_lcbc}}}
+\item{palette}{Character name of palette in lcbc_palettes}
+
+\item{discrete}{Boolean indicating whether color aesthetic is discrete or not}
+
+\item{reverse}{Boolean indicating whether the palette should be reversed}
+
+\item{...}{Additional arguments passed to discrete_scale() or
+scale_color_gradientn(), used respectively when discrete is TRUE or FALSE}
 }
 \description{
 Color scale constructor for lcbc colors

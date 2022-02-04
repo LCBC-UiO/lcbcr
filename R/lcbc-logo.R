@@ -5,9 +5,12 @@
 #' @param alpha opacity of logo
 #'
 #' @return graphics object (grob)
+#' @importFrom grid rasterGrob
+#' @importFrom png readPNG
+#' @importFrom grDevices rgb
 lcbc_logo_grob <- function(type = "main", alpha = 0.4){
 
-  logo_dir <- system.file("logos", package = "MOAS")
+  logo_dir <- system.file("logos", package = "lcbcr")
 
 
   logos <- list.files(logo_dir)
@@ -33,7 +36,7 @@ lcbc_logo_grob <- function(type = "main", alpha = 0.4){
 #' @param ... arguments to \code{annotation_custom}
 #'
 #' @export
-#'
+#' @importFrom ggplot2 annotation_custom
 #' @examples
 #' library(ggplot2)
 #' ggplot(mtcars, aes(x = wt, y = disp, colour = cyl)) +
@@ -43,6 +46,6 @@ add_lcbc_logo <- function(type = "main", alpha = .4,
                           ...){
   g <- lcbc_logo_grob(type, alpha = alpha)
 
-  ggplot2::annotation_custom(grob = g, ...)
+  annotation_custom(grob = g, ...)
 }
 

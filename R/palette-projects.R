@@ -44,7 +44,7 @@ project_palettes <- list(
 #' @param palette Character name of palette in project_palettes
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
-#'
+#' @importFrom grDevices colorRampPalette
 project_pal <- function(palette = "main", reverse = FALSE, ...) {
   palette <- match.arg(palette, names(project_palettes))
 
@@ -55,6 +55,6 @@ project_pal <- function(palette = "main", reverse = FALSE, ...) {
   if(palette == "named"){
     pal
   }else{
-    grDevices::colorRampPalette(pal, ...)
+    colorRampPalette(pal, ...)
   }
 }

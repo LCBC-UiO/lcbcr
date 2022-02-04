@@ -1,49 +1,32 @@
-Package: MOAS
-Title: MOAS convenience functions
+Package: lcbcr
+Title: LCBC brand package
 Version: 0.0.1
-Authors@R: person("Athanasia Mo", "Mowinckel", email = "a.m.mowinckel@psykologi.uio.no", role = c("aut", "cre"))
-Description: Functions created to work well with LCBC's Mother of All Spreadsheet data.
+Authors@R: person("Athanasia Mo", "Mowinckel", 
+                    email = "a.m.mowinckel@psykologi.uio.no", 
+                    role = c("aut", "cre"),
+                    comment = c(ORCID = "0000-0002-5756-0223"))
+Description: Functions and setups with brand styling and lab general setups
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.2
 LazyData: true
 Depends: R (>= 2.10)
 Imports: 
-    backports,
-    dplyr,
     extrafont,
-    lubridate,
-    magrittr,
-    purrr,
-    stringr,
-    tidyr,
-    plotly,
-    rio,
-    DT,
-    RColorBrewer,
-    utils,
-    shinycssloaders,
-    stats,
-    shiny,
-    stringi,
-    shinytest,
-    crayon,
-    pbapply,
-    readr,
+    dplyr,
     png,
-    data.table,
-    rstudioapi,
     ggplot2,
     grDevices
 Suggests: 
     knitr,
     tidyverse,
     here,
-    testthat (>= 2.1.0),
+    testthat (>= 3.0.0),
     rmarkdown,
-    devtools,
+    remotes,
     covr
 VignetteBuilder: knitr
 Remotes: LCBC-UiO/ggbrain
-URL: https://github.com/LCBC-UiO/MOAS
-BugReports: https://github.com/LCBC-UiO/MOAS/issues
+URL: https://github.com/LCBC-UiO/lcbcr
+BugReports: https://github.com/LCBC-UiO/lcbcr/issues
+Config/testthat/edition: 3

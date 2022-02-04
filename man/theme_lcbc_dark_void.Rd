@@ -4,7 +4,7 @@
 \alias{theme_lcbc_dark_void}
 \title{ggplot minimal theme for lcbc}
 \usage{
-theme_lcbc_dark_void(base_size = base_size_text)
+theme_lcbc_dark_void(base_size = NULL)
 }
 \arguments{
 \item{base_size}{text size}

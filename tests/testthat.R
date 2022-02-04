@@ -1,8 +1,6 @@
 library(testthat)
-library(dplyr)
-library(here)
 
-test_check("MOAS")
+test_check("lcbcr")
 
 # z <- covr::package_coverage()
 # covr::zero_coverage(z)

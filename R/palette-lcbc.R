@@ -49,6 +49,7 @@ lcbc_palettes <- list(
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #' @export
+#' @importFrom grDevices colorRampPalette
 lcbc_pal <- function(palette = "main", reverse = FALSE, ...) {
   palette <- match.arg(palette, names(lcbc_palettes))
 
@@ -56,5 +57,5 @@ lcbc_pal <- function(palette = "main", reverse = FALSE, ...) {
 
   if (reverse) pal <- rev(pal)
 
-  grDevices::colorRampPalette(pal, ...)
+  colorRampPalette(pal, ...)
 }

@@ -1,12 +1,11 @@
-base_size_text <- 10
-
 #' ggplot theme for lcbc
 #'
 #' @param base_size text size
 #' @export
-theme_lcbc_grid <- function (base_size = base_size_text) {
-  ggplot2::theme_grey(base_size = base_size, base_family = "Avenir") %+replace%
-    ggplot2::theme(
+#' @importFrom ggplot2 theme_grey theme %+replace%
+theme_lcbc_grid <- function (base_size = 10) {
+  theme_grey(base_size = base_size, base_family = "Avenir") %+replace%
+    theme(
       line = lcbc_line(lcbc_cols("light grey")),
       text = lcbc_text(lcbc_cols("black")),
       panel.background  = lcbc_rect(),
@@ -26,11 +25,12 @@ theme_lcbc_grid <- function (base_size = base_size_text) {
 #'
 #' @param base_size text size
 #' @export
-theme_lcbc <- function (base_size = base_size_text) {
+#' @importFrom ggplot2 theme %+replace% element_blank
+theme_lcbc <- function (base_size = NULL) {
   theme_lcbc_grid() %+replace%
-    ggplot2::theme(
-      panel.grid = ggplot2::element_blank(),
-      panel.grid.minor = ggplot2::element_blank()
+    theme(
+      panel.grid = element_blank(),
+      panel.grid.minor = element_blank()
     )
 }
 
@@ -38,9 +38,10 @@ theme_lcbc <- function (base_size = base_size_text) {
 #'
 #' @param base_size text size
 #' @export
-theme_lcbc_dark_grid <- function (base_size = base_size_text) {
+#' @importFrom ggplot2 theme %+replace%
+theme_lcbc_dark_grid <- function (base_size = NULL) {
   theme_lcbc_grid() %+replace%
-    ggplot2::theme(
+    theme(
       line = lcbc_line(lcbc_cols("dark grey")),
       text = lcbc_text(lcbc_cols("white")),
       panel.background  = lcbc_rect(lcbc_cols("black")),
@@ -63,17 +64,18 @@ theme_lcbc_dark_grid <- function (base_size = base_size_text) {
 #'
 #' @param base_size text size
 #' @export
-theme_lcbc_void <- function (base_size = base_size_text) {
+#' @importFrom ggplot2 theme %+replace% element_blank
+theme_lcbc_void <- function (base_size = NULL) {
   theme_lcbc_grid() %+replace%
-    ggplot2::theme(
-      panel.background  =  ggplot2::element_blank(),
-      panel.grid = ggplot2::element_blank(),
-      panel.grid.minor = ggplot2::element_blank(),
-      plot.background = ggplot2::element_blank(),
-      axis.line = ggplot2::element_blank(),
-      axis.text = ggplot2::element_blank(),
-      axis.title =  ggplot2::element_blank(),
-      axis.ticks =  ggplot2::element_blank()
+    theme(
+      panel.background  =  element_blank(),
+      panel.grid = element_blank(),
+      panel.grid.minor = element_blank(),
+      plot.background = element_blank(),
+      axis.line = element_blank(),
+      axis.text = element_blank(),
+      axis.title =  element_blank(),
+      axis.ticks =  element_blank()
     )
 }
 
@@ -81,11 +83,12 @@ theme_lcbc_void <- function (base_size = base_size_text) {
 #'
 #' @param base_size text size
 #' @export
-theme_lcbc_dark <- function (base_size = base_size_text) {
+#' @importFrom ggplot2 theme %+replace% element_blank
+theme_lcbc_dark <- function (base_size = NULL) {
   theme_lcbc_dark_grid() %+replace%
-    ggplot2::theme(
-      panel.grid = ggplot2::element_blank(),
-      panel.grid.minor = ggplot2::element_blank()
+    theme(
+      panel.grid = element_blank(),
+      panel.grid.minor = element_blank()
     )
 }
 
@@ -93,27 +96,30 @@ theme_lcbc_dark <- function (base_size = base_size_text) {
 #'
 #' @param base_size text size
 #' @export
-theme_lcbc_dark_void <- function (base_size = base_size_text) {
+#' @importFrom ggplot2 theme %+replace% element_blank
+theme_lcbc_dark_void <- function (base_size = NULL) {
   theme_lcbc_dark() %+replace%
-    ggplot2::theme(
-      panel.grid = ggplot2::element_blank(),
-      panel.grid.minor = ggplot2::element_blank(),
-      axis.line = ggplot2::element_blank(),
-      axis.text = ggplot2::element_blank(),
-      axis.title = ggplot2::element_blank(),
-      axis.ticks = ggplot2::element_blank()
+    theme(
+      panel.grid = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.line = element_blank(),
+      axis.text = element_blank(),
+      axis.title = element_blank(),
+      axis.ticks = element_blank()
     )
 }
 
+#' @importFrom ggplot2 element_text margin
 lcbc_text <- function(colour,
-                      size = base_size_text,
+                      size = NULL,
                       lineheight = 0.9,
                       hjust = 0.5,
                       vjust = 0.5,
                       angle = 0,
                       face = "plain"){
+  if(is.null(size)) size <- 10
 
-  ggplot2::element_text(family = "Avenir",
+  element_text(family = "Avenir",
                         face = face,
                         colour =  colour,
                         hjust = hjust,
@@ -121,17 +127,19 @@ lcbc_text <- function(colour,
                         angle = angle,
                         size = size,
                         lineheight = lineheight,
-                        margin = ggplot2::margin(),
+                        margin = margin(),
                         debug = FALSE)
 }
 
+#' @importFrom ggplot2 element_line
 lcbc_line <- function(colour, linetype = "solid"){
-  ggplot2::element_line(colour = colour,
+  element_line(colour = colour,
                         size = .6,
                         linetype =  linetype,
                         lineend = "round")
 }
 
+#' @importFrom ggplot2 element_rect
 lcbc_rect <- function(fill = "transparent", colour = NA){
-  ggplot2::element_rect(fill = fill, colour = colour)
+  element_rect(fill = fill, colour = colour)
 }
