@@ -11,20 +11,18 @@
 lcbc_logo_grob <- function(type = "main", alpha = 0.4){
 
   logo_dir <- system.file("logos", package = "lcbcr")
-
-
   logos <- list.files(logo_dir)
   logos <- gsub("LCBC_|\\.png", "", logos)
 
   type <- match.arg(type, logos)
 
-  img <- png::readPNG(list.files(logo_dir, pattern = type, full.names = TRUE),
-                      FALSE, FALSE)
+  img <- readPNG(list.files(logo_dir, pattern = type, full.names = TRUE),
+                 FALSE, FALSE)
 
-  img <- matrix(grDevices::rgb(img[,,1], img[,,2], img[,,3],
+  img <- matrix(rgb(img[,,1], img[,,2], img[,,3],
                     img[,,4] * alpha), nrow=dim(img)[1])
 
-  grid::rasterGrob(img, interpolate=TRUE)
+  rasterGrob(img, interpolate=TRUE)
 }
 
 #' Add LCBC logo to plot

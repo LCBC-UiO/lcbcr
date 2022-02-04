@@ -5,7 +5,7 @@ Authors@R: person("Athanasia Mo", "Mowinckel",
                     email = "a.m.mowinckel@psykologi.uio.no", 
                     role = c("aut", "cre"),
                     comment = c(ORCID = "0000-0002-5756-0223"))
-Description: Functions and setups with brand styling and lab general setups
+Description: Functions and setups with brand styling and lab general setups.
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.1.2

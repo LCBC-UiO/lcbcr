@@ -29,7 +29,7 @@ scale_color_lcbc <- scale_colour_lcbc
 #' Fill scale constructor for lcbc colors
 #'
 #' @inheritParams scale_colour_lcbc
-#' @importFrom ggplot2 discrete_scale scale_colour_gradientn
+#' @importFrom ggplot2 discrete_scale scale_fill_gradientn
 #' @export
 scale_fill_lcbc <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- lcbc_pal(palette = palette, reverse = reverse)
@@ -74,7 +74,7 @@ scale_color_proj <- scale_colour_proj
 #'
 #' @inheritParams scale_colour_proj
 #' @export
-#' @importFrom ggplot2 discrete_scale scale_colour_gradientn scale_color_manual
+#' @importFrom ggplot2 discrete_scale scale_fill_gradientn scale_color_manual
 scale_fill_proj <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- project_pal(palette = palette, reverse = reverse)
 
