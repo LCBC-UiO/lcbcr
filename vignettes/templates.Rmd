@@ -1,0 +1,32 @@
+---
+title: "Using LCBC templates"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{templates}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(lcbcr)
+```
+
+There are several templates built in to the `lcbcr` package, that help with LCBC branding on various documents and projects.
+The document templates (`Rmd` templates) can be accessed through the RStudio navigation:
+
+New file -> R markdown -> Templates -> (look for any file where it says `lcbcr` at the end)
+
+These are documents rendered as html presentations, pdf letters, or html documents. 
+Combine these with ggplot2 branding for LCBC for a more professional look. 
+
+In addition, there is a way to initiate an analysis project, with default files and folders already set up for you immediately.
+In RStudio, start the wizard to create a new project, and when you come to the screen where you select different project types (R project, package, website etc), scroll down until you see the LCBC logo with the text "Create LCBC paper project". 
+
+Fill out the information needed and start your new project!

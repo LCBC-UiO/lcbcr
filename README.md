@@ -6,9 +6,24 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/LCBC-UiO/lcbcr/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/lcbcr/actions)
+[![r-universe](https://lcbc-uio.r-universe.dev/badges/lcbcr)](https://lcbc-uio.r-universe.dev/ui#packages)
 <!-- badges: end -->
 
-The package can be installed using remotes:
+This package can be installed through the [LCBC
+r-universe](https://lcbc-uio.r-universe.dev/ui#builds):
+
+``` r
+# Enable universe(s) by lcbc-uio
+options(repos = c(
+  lcbcuio = 'https://lcbc-uio.r-universe.dev',
+  CRAN = 'https://cloud.r-project.org'
+))
+
+# Install some packages
+install.packages('lcbcr')
+```
+
+or using remotes:
 
 ``` r
 install.packages("remotes")
