@@ -4,7 +4,11 @@
 #' @export
 #' @importFrom ggplot2 theme_grey theme %+replace%
 theme_lcbc_grid <- function (base_size = 10) {
-  theme_grey(base_size = base_size, base_family = "Avenir") %+replace%
+  base_fam <- ""
+  if(lcbc_font_installed())
+    base_fam <- "Avenir"
+  theme_grey(base_size = base_size,
+             base_family = base_fam) %+replace%
     theme(
       line = lcbc_line(lcbc_cols("light grey")),
       text = lcbc_text(lcbc_cols("black")),
@@ -118,8 +122,10 @@ lcbc_text <- function(colour,
                       angle = 0,
                       face = "plain"){
   if(is.null(size)) size <- 10
-
-  element_text(family = "Avenir",
+  base_fam <- ""
+  if(lcbc_font_installed())
+    base_fam <- "Avenir"
+  element_text(family = base_fam,
                         face = face,
                         colour =  colour,
                         hjust = hjust,
