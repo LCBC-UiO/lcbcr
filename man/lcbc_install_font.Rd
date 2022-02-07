@@ -6,6 +6,9 @@
 \usage{
 lcbc_install_font(...)
 }
+\arguments{
+\item{...}{arguments to \code{\link[extrafont]{font_import}}}
+}
 \description{
 Install Avenir font for LCBC branding
 }

@@ -1,7 +1,7 @@
 
 #' Install Avenir font for LCBC branding
 #'
-#' @params ... arguments to \code{\link[extrafont]{font_import}}
+#' @param ... arguments to \code{\link[extrafont]{font_import}}
 #'
 #' @export
 #' @examples

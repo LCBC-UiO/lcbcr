@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# LCBC functions <img src="man/figures/hex.png" align="right" alt="" width="120" />
+# LCBC functions <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
 <!-- badges: start -->
 
