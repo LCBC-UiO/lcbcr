@@ -186,13 +186,13 @@ mtcars %>%
   ) 
 ```
 
-You can also add the logo outside the plot area, but that requires extra work, as ggplot automatically cuts away all datapoints that dont fit in the main plot area.
+You can also add the logo outside the plot area, but that requires extra work, as ggplot automatically cuts away all data points that don't fit in the main plot area.
 
-To coordinates can be found with some trial and error, here we want to place the logo at the bottom right. The plot y-axis starts at `50`, and the x-axis ends at `5.5`. SO here we specify that the logo should be placed below the y-axis and to the right of the x-axis, extending the main plot area beyong the data.
+To coordinates can be found with some trial and error, here we want to place the logo at the bottom right. The plot y-axis starts at `50`, and the x-axis ends at `5.5`. SO here we specify that the logo should be placed below the y-axis and to the right of the x-axis, extending the main plot area beyond the data.
 
 To keep whatever we place there, we need to tell ggplot to _not_ `clip` anything outside the main plot out, turning clipping off with `coord_cartesian`.
 
-After this, we need to tell ggplot to extend the plot to include the area we placed the logo. This is trial and error, changing the numbers in `units` changes how much the plot is extended to each of it's four sides. `1` is no extention, and any number above or below that will increase or reduce the plotting area, respectively.
+After this, we need to tell ggplot to extend the plot to include the area we placed the logo. This is trial and error, changing the numbers in `units` changes how much the plot is extended to each of it's four sides. `1` is no extension, and any number above or below that will increase or reduce the plotting area, respectively.
 
 ```{r}
 mtcars %>% 

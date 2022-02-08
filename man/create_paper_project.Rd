@@ -4,12 +4,14 @@
 \alias{create_paper_project}
 \title{Initiate a paper project}
 \usage{
-create_paper_project(dir, title, edit = interactive())
+create_paper_project(dir, title, git = FALSE, edit = interactive())
 }
 \arguments{
 \item{dir}{directory to create the project in}
 
 \item{title}{Title of the project}
+
+\item{git}{initiate git or not (default TRUE)}
 
 \item{edit}{Should files to edit be opened.}
 }

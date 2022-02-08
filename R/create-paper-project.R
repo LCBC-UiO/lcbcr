@@ -2,6 +2,7 @@
 #'
 #' @param dir directory to create the project in
 #' @param title Title of the project
+#' @param git initiate git or not (default TRUE)
 #' @param edit Should files to edit be opened.
 #'
 #' @return no return
