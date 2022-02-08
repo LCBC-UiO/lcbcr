@@ -8,7 +8,7 @@
 lcbc_logo_list <- function(){
   logo_dir <- system.file("logos", package = "lcbcr")
   logos <- list.files(logo_dir)
-  gsub("lcbc_|\\.png", "", logos)
+  gsub("\\.png", "", logos)
 }
 
 #' LCBC logo graphics object
