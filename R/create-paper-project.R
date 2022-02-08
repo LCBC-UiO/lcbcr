@@ -8,6 +8,7 @@
 #' @export
 create_paper_project <- function(dir,
                                  title,
+                                 git = FALSE,
                                  edit = interactive()){
   type <- "create-paper-project"
   pkgname <- basename(dir)
@@ -24,6 +25,11 @@ create_paper_project <- function(dir,
   })
   files <- list.files(dir, full.names = TRUE, recursive = TRUE)
   k <- lapply(files, template_replace, pkgname = pkgname, title = title)
+  if(git){
+    lines <- c("data", "")
+    writeLines(lines, sprintf("%s/.gitignore", dir))
+    system(sprintf("cd %s; git init", dir))
+  }
 }
 
 new_project_create_paper_project <- function(dir, ...) {

@@ -1,3 +1,15 @@
+#' List available LCBC logo variations
+#'
+#' @return character vector of logo names
+#' @export
+#'
+#' @examples
+#' lcbc_logo_list()
+lcbc_logo_list <- function(){
+  logo_dir <- system.file("logos", package = "lcbcr")
+  logos <- list.files(logo_dir)
+  gsub("lcbc_|\\.png", "", logos)
+}
 
 #' LCBC logo graphics object
 #'
@@ -11,10 +23,7 @@
 lcbc_logo_grob <- function(type = "main", alpha = 0.4){
 
   logo_dir <- system.file("logos", package = "lcbcr")
-  logos <- list.files(logo_dir)
-  logos <- gsub("LCBC_|\\.png", "", logos)
-
-  type <- match.arg(type, logos)
+  type <- match.arg(type, lcbc_logo_list())
 
   img <- readPNG(list.files(logo_dir, pattern = type, full.names = TRUE),
                  FALSE, FALSE)

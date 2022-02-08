@@ -8,3 +8,10 @@ Default: Untitled
 Widget: TextInput
 Label: Title
 Position: left
+
+
+Parameter: git
+Widget: CheckboxInput
+Label: Use git
+Default: On
+Position: left
