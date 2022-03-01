@@ -1,6 +1,6 @@
 Package: lcbcr
 Title: LCBC brand package
-Version: 0.0.1
+Version: 0.0.1.900
 Authors@R: person("Athanasia Mo", "Mowinckel", 
                     email = "a.m.mowinckel@psykologi.uio.no", 
                     role = c("aut", "cre"),

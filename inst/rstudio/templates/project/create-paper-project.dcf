@@ -10,8 +10,14 @@ Label: Title
 Position: left
 
 
-Parameter: git
+Parameter: use_git
 Widget: CheckboxInput
-Label: Use git
+Label: Use git version control
 Default: On
-Position: left
+Position: right
+
+Parameter: use_renv
+Widget: CheckboxInput
+Label: Use renv package manager
+Default: Off
+Position: right

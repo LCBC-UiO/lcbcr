@@ -140,7 +140,7 @@ mtcars %>%
        subtitle = "of various kinds") +
   scale_colour_lcbc(discrete = FALSE) +
   theme_lcbc() +
-  add_lcbc_logo("long", alpha=.5) 
+  add_lcbc_logo("text", alpha=.5) 
 ```
 
 ```{r}
