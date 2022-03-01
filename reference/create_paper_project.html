@@ -66,7 +66,13 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_paper_project</span><span class="op">(</span><span class="va">dir</span>, <span class="va">title</span>, git <span class="op">=</span> <span class="cn">FALSE</span>, edit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_paper_project</span><span class="op">(</span>
+  <span class="va">dir</span>,
+  <span class="va">title</span>,
+  use_git <span class="op">=</span> <span class="cn">TRUE</span>,
+  use_renv <span class="op">=</span> <span class="cn">FALSE</span>,
+  edit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -75,8 +81,10 @@
 <dd><p>directory to create the project in</p></dd>
 <dt>title</dt>
 <dd><p>Title of the project</p></dd>
-<dt>git</dt>
+<dt>use_git</dt>
 <dd><p>initiate git or not (default TRUE)</p></dd>
+<dt>use_renv</dt>
+<dd><p>initiate renv or not (default FALSE)</p></dd>
 <dt>edit</dt>
 <dd><p>Should files to edit be opened.</p></dd>
 </dl></div>
