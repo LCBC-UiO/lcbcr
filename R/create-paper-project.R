@@ -2,7 +2,8 @@
 #'
 #' @param dir directory to create the project in
 #' @param title Title of the project
-#' @param git initiate git or not (default TRUE)
+#' @param use_git initiate git or not (default TRUE)
+#' @param use_renv initiate renv or not (default FALSE)
 #' @param edit Should files to edit be opened.
 #'
 #' @return no return
