@@ -3,13 +3,6 @@ Title: Create LCBC paper project
 Icon: lcbc_logo.png
 OpenFiles:  DESCRIPTION, README.Rmd, docs/example_presentation/Untitled.Rmd, R/example_func.R
 
-Parameter: title
-Default: Untitled
-Widget: TextInput
-Label: Title
-Position: left
-
-
 Parameter: use_git
 Widget: CheckboxInput
 Label: Use git version control
