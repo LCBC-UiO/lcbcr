@@ -20,6 +20,7 @@ create_paper_project <- function(dir,
   template_dir <- system.file(file.path("rstudio", "templates","project", type),
                               package = "lcbcr")
   dirs <- list.dirs(template_dir, full.names = FALSE)
+  dirs <- unique(c("data", "docs", "figures", "results", "scripts", dirs))
   k <- lapply(dirs, function(x) dir.create(file.path(dir, x), recursive = TRUE, showWarnings = FALSE))
   files <- list.files(template_dir, recursive = TRUE)
   k <- lapply(files, function(x){
