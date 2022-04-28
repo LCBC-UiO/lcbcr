@@ -21,7 +21,11 @@ create_paper_project <- function(dir,
                               package = "lcbcr")
   dirs <- list.dirs(template_dir, full.names = FALSE)
   dirs <- unique(c("data", "docs", "figures", "results", "scripts", dirs))
-  k <- lapply(dirs, function(x) dir.create(file.path(dir, x), recursive = TRUE, showWarnings = FALSE))
+  k <- lapply(dirs, function(x)
+    dir.create(file.path(dir, x),
+               recursive = TRUE,
+               showWarnings = FALSE)
+  )
   files <- list.files(template_dir, recursive = TRUE)
   k <- lapply(files, function(x){
     file.copy(file.path(template_dir, x),
@@ -30,13 +34,40 @@ create_paper_project <- function(dir,
   files <- list.files(dir, full.names = TRUE, recursive = TRUE)
   k <- lapply(files, template_replace, pkgname = pkgname, title = title)
   if(use_git){
-    lines <- c("data", "")
+    lines <- c(
+      "# Remove lines as needed to easily add data again.",
+      "# If you only want to add a single file within an",
+      "# ignored folder, you can force add that specific",
+      "# file, and still ignore the remaining folder content",
+      "# by default.",
+      "",
+      "# ignore folder with potential data",
+      "data/",
+      "results/",
+      "",
+      "# ignore common non-text files that can inflate repo size",
+      "figures/*png",
+      "figures/*pdf",
+      "figures/*tiff",
+      "figures/*jpg",
+      "figures/*jpeg",
+      "docs/*pdf",
+      "docs/*.doc",
+      "docs/*.docx",
+      "",
+      "# ignore R stuff",
+      ".Rhistory",
+      ".Rproj.user/",
+      "",
+      "# ignore mac hidden file",
+      "**.DS_Store",
+      ""
+    )
     writeLines(lines, sprintf("%s/.gitignore", dir))
     system(sprintf("cd %s; git init", dir))
   }
-  if(use_renv){
-    renv::init(project = dir,)
-  }
+  if(use_renv)
+    renv::init(project = dir)
 }
 
 new_project_create_paper_project <- function(dir, ...) {
