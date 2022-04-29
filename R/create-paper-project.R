@@ -64,7 +64,7 @@ create_paper_project <- function(dir,
       ""
     )
     writeLines(lines, sprintf("%s/.gitignore", dir))
-    system(sprintf("cd %s; git init", dir))
+    gert::git_init()
   }
   if(use_renv)
     renv::init(project = dir)
